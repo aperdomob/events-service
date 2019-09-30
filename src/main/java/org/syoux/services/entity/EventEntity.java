@@ -1,0 +1,42 @@
+package org.syoux.services.entity;
+
+import java.time.ZonedDateTime;
+import lombok.Getter;
+import lombok.Setter;
+
+public class EventEntity {
+  @Getter
+  @Setter
+  private String id;
+
+  @Getter
+  @Setter
+  private ZonedDateTime date;
+
+  @Getter
+  @Setter
+  private String user;
+
+  @Getter
+  private Actions action;
+
+  @Getter
+  @Setter
+  private String component;
+
+  @Getter
+  @Setter
+  private Object body;
+
+  public void setAction(String action) {
+    for (Actions current : Actions.values()) {
+      if (current.equalsName(action)) {
+        this.setAction(current);
+      }
+    }
+  }
+
+  public void setAction(Actions action) {
+    this.action = action;
+  }
+}
