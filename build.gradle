@@ -25,14 +25,17 @@ ext {
 
 dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.10'
-    annotationProcessor 'org.projectlombok:lombok:1.18.10'
 
     compile group: 'com.google.firebase', name: 'firebase-admin', version: '6.10.0'
-    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
-    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+    compile group: 'com.h2database', name: 'h2', version: '1.4.199'
 
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 
     testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 }

@@ -55,10 +55,10 @@ public class FirebaseEventRepository implements ValueEventListener, EventReposit
   public void onDataChange(DataSnapshot snapshot) {
     for (DataSnapshot children: snapshot.getChildren()) {
       EventDao dao = children.getValue(EventDao.class);
-//      EventEntity entity = EventMapper.INSTANCE.daoToModel(dao);
-      //    entity.setId(children.getKey());
 
-      // this.table.put(entity.getId(), entity);
+      EventEntity entity = this.eventMapper.daoToModel(dao);
+      entity.setId(children.getKey());
+      this.table.put(entity.getId(), entity);
     }
   }
 

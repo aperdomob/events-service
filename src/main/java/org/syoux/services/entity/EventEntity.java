@@ -10,7 +10,6 @@ public class EventEntity {
   private String id;
 
   @Getter
-  @Setter
   private ZonedDateTime date;
 
   @Getter
@@ -38,5 +37,13 @@ public class EventEntity {
 
   public void setAction(Actions action) {
     this.action = action;
+  }
+
+  public void setDate(ZonedDateTime date) {
+    this.date = date;
+  }
+
+  public void setDate(String date) {
+    this.date = ZonedDateTime.parse(date);
   }
 }

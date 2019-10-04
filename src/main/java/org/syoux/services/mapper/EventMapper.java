@@ -6,7 +6,7 @@ import org.syoux.services.dao.EventDao;
 import org.syoux.services.dto.EventDto;
 import org.syoux.services.entity.EventEntity;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring", uses = DateMapper.class)
 public interface EventMapper {
   EventEntity dtoToModel(EventDto dto);
   EventEntity daoToModel(EventDao dao);

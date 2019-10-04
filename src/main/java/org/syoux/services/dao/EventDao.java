@@ -7,7 +7,7 @@ import lombok.Setter;
 public class EventDao {
   @Getter
   @Setter
-  private ZonedDateTime date;
+  private String date;
 
   @Getter
   @Setter
